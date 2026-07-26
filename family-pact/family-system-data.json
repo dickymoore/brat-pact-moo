@@ -28,7 +28,7 @@
     "side": {
       "path": "assets/20250811_211203.jpg",
       "alt": "Family photo in front of old stone walls at dusk",
-      "caption": "Family photo strip moment."
+      "caption": "You gotta learn how to keep your castle clean."
     },
     "gallery": [
       {
@@ -200,17 +200,17 @@
   },
   "calloutRiff": [
     {
-      "label": "Arsenal chant",
+      "label": "The Household chant",
       "text": "\"North London forever.\"",
-      "subtext": "Big team energy. Still put the shoes away."
+      "subtext": "Big team energy includes clean shoes, well tucked away."
     },
     {
-      "label": "Minecraft mode",
+      "label": "Dishwasher Stacking",
       "text": "\"Build mode: on.\"",
       "subtext": "Less chaos, more systems."
     },
     {
-      "label": "Ariana snippet",
+      "label": "Diva style",
       "text": "\"thank u, next\"",
       "subtext": "Use the phone budget well and move on."
     },
@@ -235,9 +235,9 @@
       "subtext": "The official response to random extra screen-time requests."
     },
     {
-      "label": "Stranger Things",
+      "label": "The honour code",
       "text": "\"Friends don't lie.\"",
-      "subtext": "And phone-time appeals do not happen out loud."
+      "subtext": "We weren't using Spotify and WhatsApp to watch short-form content."
     }
   ],
   "research": {
