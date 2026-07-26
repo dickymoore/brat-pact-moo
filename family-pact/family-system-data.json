@@ -1,0 +1,183 @@
+{
+  "title": "Family Money, Phone and Responsibilities",
+  "subtitle": "",
+  "reviewDate": "13 September 2026",
+  "ticker": [
+    "working draft for family discussion",
+    "more independence = more responsibility",
+    "phones charge downstairs overnight",
+    "if you want more money, earn it",
+    "if you want more phone time, budget it"
+  ],
+  "masthead": {
+    "label": "Brat Pact",
+    "nav": [
+      "Money",
+      "Phone",
+      "Responsibilities",
+      "Rota"
+    ]
+  },
+  "images": {
+    "hero": {
+      "path": "",
+      "alt": "Hero image for the family system sheet",
+      "caption": "Drop in a family photo, collage, or editorial-style illustration here."
+    },
+    "side": {
+      "path": "",
+      "alt": "Side image for the family system sheet",
+      "caption": "Use this for a second image, doodle, sticker graphic, or screenshot."
+    }
+  },
+  "callouts": [
+    "Phones charge downstairs overnight",
+    "Social planning counts within phone time",
+    "No ad hoc top-ups"
+  ],
+  "allowance": {
+    "formula": "Age x 2.5 per month, rounded to the nearest £5",
+    "kit": "16 x 2.5 = £40 per month",
+    "obie": "14 x 2.5 = £35 per month",
+    "covers": [
+      "Everyday clothes",
+      "Haircuts",
+      "Snacks and treats",
+      "Small social spending"
+    ],
+    "parentsCover": [
+      "School uniform",
+      "School shoes if needed for school",
+      "Sports kit required for school or clubs",
+      "Winter coat",
+      "Toiletries and household basics",
+      "Phone contract",
+      "Urgent essential replacement clothing"
+    ]
+  },
+  "phone": {
+    "formula": "30 minutes + ((age - 10) x 30 minutes)",
+    "spreadsheet": "=SUM((Age-10)*30+30)",
+    "transitionBonus": "+30 minutes per day during the transition",
+    "kit": "16 -> 210 mins a day",
+    "obie": "14 -> 150 mins a day",
+    "rules": [
+      "Phone time includes social planning and messaging",
+      "No TikTok, Shorts or Reels in the first hour after waking",
+      "No TikTok, Shorts or Reels in the final hour before bed",
+      "Phones charge downstairs overnight",
+      "No extra top-ups in the moment",
+      "No switching to TV or laptop as a loophole",
+      "Unused daily phone time does not normally roll over"
+    ],
+    "buyMore": {
+      "rate": "30 minutes = £1.50",
+      "limits": [
+        "Buy in advance, not in the moment after time has run out",
+        "Maximum 30 extra minutes in one day",
+        "Maximum 90 extra minutes in one week",
+        "Bought time still does not override first-hour or last-hour rules"
+      ]
+    },
+    "otherScreens": [
+      "Laptop and solo TV still count as entertainment",
+      "Suggested limit: no more than 1 additional hour of recreational laptop or solo TV on a normal day",
+      "Family films or shared watching can be treated separately"
+    ]
+  },
+  "rewards": {
+    "headline": "Bonus rewards",
+    "items": [
+      "Every 5 house points = 30 minutes extra phone time or £2 allowance credit",
+      "Each child gets £10 for every book plus book report delivered, provided the book is at or above their recommended reading age",
+      "The book report can be written, performed as a speech, or made as a video"
+    ]
+  },
+  "points": {
+    "houseReward": "Every 5 house points can be exchanged for 30 minutes extra phone time or £2 allowance credit",
+    "house": [
+      "Do jobs without reminders",
+      "Show initiative",
+      "Help out well",
+      "Budget sensibly"
+    ],
+    "behaviour": [
+      "Missed room or shared-space standard",
+      "Missed rota job",
+      "Wrappers, bowls or cups left around",
+      "Bags, clothes or socks left dumped",
+      "Arguing or delaying instead of doing the job"
+    ],
+    "thresholds": [
+      "1 point: warning and same-day correction",
+      "2 points in a week: minus 30 mins phone time next day",
+      "3 points in a week: home detention"
+    ],
+    "allowanceDeductions": [
+      "0-1 behaviour points: full allowance",
+      "2-3 behaviour points: no allowance reduction",
+      "4-5 behaviour points: 20% reduction from next allowance payment",
+      "6+ behaviour points: 50% reduction and family review"
+    ]
+  },
+  "daily": {
+    "title": "Every day by 8:30pm",
+    "items": [
+      "Laundry in basket",
+      "Bags and shoes put away",
+      "Wrappers and dishes cleared",
+      "No bowls or glasses left in bedrooms overnight",
+      "Bedroom floor clear",
+      "Own mess cleared from shared rooms"
+    ]
+  },
+  "rota": {
+    "activeWeek": "Week A",
+    "weekA": [
+      "Kit: dishwasher lead",
+      "Obie: recycling and garden lead"
+    ],
+    "weekB": [
+      "Obie: dishwasher lead",
+      "Kit: recycling and garden lead"
+    ],
+    "roles": {
+      "dishwasher": [
+        "Empty dishwasher each morning before lunch",
+        "Help make sure dishes are stacked after dinner",
+        "Collect stray cups, bowls and plates from shared rooms by evening check"
+      ],
+      "recyclingGarden": [
+        "Put recycling out every day",
+        "Empty indoor recycling into main bins as needed",
+        "Water front and back gardens on agreed days",
+        "Do a quick check for outdoor clutter"
+      ]
+    }
+  },
+  "jobs": {
+    "rate": "Suggested extra-job rate: about £8 per hour",
+    "items": [
+      "Deep clean bathroom: £3",
+      "Mow lawn: £3-£4",
+      "Car clean: £4",
+      "Weeding or a bigger garden task: £2-£4",
+      "Sorting a cupboard or storage area: £2-£3"
+    ]
+  },
+  "research": {
+    "headline": "Why the phone rules are tight",
+    "stats": [
+      "Ofcom 2024: 4-15s averaged 8h 29m a week on video-sharing platforms",
+      "Ofcom 2024: 12-15s averaged 6h 34m a week of YouTube viewing in the home",
+      "NHS-style guidance: keep at least 60 minutes screen-free before sleep"
+    ],
+    "items": [
+      "Research is more concerned about compulsive, bedtime and short-form use than a single universal screen-time number",
+      "NHS-style guidance supports at least 60 minutes screen-free before sleep",
+      "APA and Surgeon General guidance support family plans, predictable boundaries and sleep protection",
+      "Ofcom reports 4-15s averaged 8h 29m a week on video-sharing platforms in 2024",
+      "Ofcom reports 12-15s averaged 6h 34m a week of YouTube viewing in the home in 2024"
+    ]
+  }
+}
