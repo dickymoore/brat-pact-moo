@@ -1112,9 +1112,6 @@ $callouts
             <div style="margin-top:18px;">
               $sideImage
             </div>
-            <div class="mini-note">
-              <strong>Phone time note:</strong> Spotify and WhatsApp should be unlimited for music and social planning. Do not misuse them to watch videos.
-            </div>
           </div>
         </div>
 
@@ -1225,6 +1222,9 @@ $recyclingItems
             <ul>
 $buyMoreItems
             </ul>
+            <div class="mini-note">
+              <strong>Phone time note:</strong> Spotify and WhatsApp should be unlimited for music and social planning. Do not misuse them to watch videos.
+            </div>
           </div>
           <div class="light-card">
             <h3>Phone age levels</h3>
