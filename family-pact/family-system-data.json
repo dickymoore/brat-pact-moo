@@ -26,10 +26,27 @@
       "caption": ""
     },
     "side": {
-      "path": "",
-      "alt": "Side image for the family system sheet",
-      "caption": "Use this for a second image, doodle, sticker graphic, or screenshot."
-    }
+      "path": "assets/20250811_211203.jpg",
+      "alt": "Family photo in front of old stone walls at dusk",
+      "caption": "Family photo strip moment."
+    },
+    "gallery": [
+      {
+        "path": "assets/20250817_200054.jpg",
+        "alt": "Family sitting by the water with boats behind them",
+        "caption": "Harbour energy"
+      },
+      {
+        "path": "assets/20250818_110547.jpg",
+        "alt": "Family with backpacks in a street scene",
+        "caption": "On the move"
+      },
+      {
+        "path": "assets/20250818_125758.jpg",
+        "alt": "Family walking through an underground passage",
+        "caption": "Mission mode"
+      }
+    ]
   },
   "callouts": [
     "Phones charge downstairs overnight",
@@ -77,7 +94,7 @@
     "kit": "16 years old -> 210 mins a day",
     "obie": "14 years old -> 150 mins a day",
     "rules": [
-      "Spotify and WhatsApp are unlimited in Kidslox for music and social planning",
+      "Spotify and WhatsApp are unlimited for music and social planning",
       "Do not misuse Spotify or WhatsApp by watching videos on them",
       "No looking at phones in bed, in morning or evening",
       "No TikTok, Shorts or Reels in the first hour after waking",
@@ -181,6 +198,48 @@
       "Sorting a cupboard or storage area: £4+"
     ]
   },
+  "calloutRiff": [
+    {
+      "label": "Arsenal chant",
+      "text": "\"North London forever.\"",
+      "subtext": "Big team energy. Still put the shoes away."
+    },
+    {
+      "label": "Minecraft mode",
+      "text": "\"Build mode: on.\"",
+      "subtext": "Less chaos, more systems."
+    },
+    {
+      "label": "Ariana snippet",
+      "text": "\"thank u, next\"",
+      "subtext": "Use the phone budget well and move on."
+    },
+    {
+      "label": "Charli-coded",
+      "text": "\"365, party girl\"",
+      "subtext": "But still take the bowl back to the kitchen."
+    },
+    {
+      "label": "Main character note",
+      "text": "\"Main character energy is putting the bowl back in the kitchen.\"",
+      "subtext": "The household manifesto line."
+    },
+    {
+      "label": "Excuse check",
+      "text": "\"Do I look like I'm in Oklahoma?!\"",
+      "subtext": "The official response to nonsense excuses."
+    },
+    {
+      "label": "Theatre cue",
+      "text": "\"No way.\"",
+      "subtext": "The official response to random extra screen-time requests."
+    },
+    {
+      "label": "Stranger Things",
+      "text": "\"Friends don't lie.\"",
+      "subtext": "And phone-time appeals do not happen out loud."
+    }
+  ],
   "research": {
     "headline": "Why the phone rules are tight",
     "stats": [

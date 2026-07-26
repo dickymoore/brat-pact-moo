@@ -46,6 +46,19 @@ function Get-ImageMarkup {
 "@
 }
 
+function Get-GalleryMarkup {
+    param([object[]]$Images)
+
+    return (($Images | ForEach-Object {
+@"
+          <figure class="gallery-shot">
+            <img src="$($_.path)" alt="$($_.alt)" />
+            <figcaption>$($_.caption)</figcaption>
+          </figure>
+"@
+    }) -join "`n")
+}
+
 $ticker = Join-Spans $data.ticker
 $navItems = Join-Spans $data.masthead.nav
 $callouts = Join-Spans $data.callouts
@@ -65,6 +78,27 @@ $buyMoreItems = New-ListItems $data.phone.buyMore.limits
 $rewardItems = New-ListItems $data.rewards.items
 $ageLevelItems = New-ListItems $data.phone.ageLevels
 $oldPhoneItems = New-ListItems $data.phone.currentOld
+$galleryMarkup = Get-GalleryMarkup $data.images.gallery
+function Get-CalloutRiffMarkup {
+    param([object[]]$Items)
+
+    $index = 0
+    return (($Items | ForEach-Object {
+        $index += 1
+@"
+          <article class="riff-card riff-$index">
+            <span class="riff-label">$($_.label)</span>
+            <p class="riff-text">$($_.text)</p>
+            <p class="riff-sub">$($_.subtext)</p>
+          </article>
+"@
+    }) -join "`n")
+}
+
+$riffA = Get-CalloutRiffMarkup $data.calloutRiff[0..1]
+$riffB = Get-CalloutRiffMarkup $data.calloutRiff[2..3]
+$riffC = Get-CalloutRiffMarkup $data.calloutRiff[4..5]
+$riffD = Get-CalloutRiffMarkup $data.calloutRiff[6..7]
 
 $heroImage = Get-ImageMarkup -Path $data.images.hero.path -Alt $data.images.hero.alt -Caption $data.images.hero.caption -CssClass "hero-photo"
 $sideImage = Get-ImageMarkup -Path $data.images.side.path -Alt $data.images.side.alt -Caption $data.images.side.caption -CssClass "side-photo"
@@ -538,6 +572,214 @@ $html = @"
       color: #111;
     }
 
+    #family-system-sheet .photo-riff {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.8fr;
+      gap: 18px;
+      align-items: end;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    #family-system-sheet .gallery-shot {
+      margin: 0;
+      background: #fff;
+      border: 3px solid var(--line);
+      box-shadow: 6px 6px 0 #000;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #family-system-sheet .gallery-shot:nth-child(1) {
+      transform: rotate(-2deg);
+    }
+
+    #family-system-sheet .gallery-shot:nth-child(2) {
+      transform: rotate(2deg) translateY(16px);
+    }
+
+    #family-system-sheet .gallery-shot:nth-child(3) {
+      transform: rotate(-3deg) translateY(-8px);
+    }
+
+    #family-system-sheet .gallery-shot img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    #family-system-sheet .gallery-shot:nth-child(1) img { object-position: center 40%; }
+    #family-system-sheet .gallery-shot:nth-child(2) img { object-position: center 35%; }
+    #family-system-sheet .gallery-shot:nth-child(3) img { object-position: center 30%; }
+
+    #family-system-sheet .gallery-shot figcaption {
+      padding: 10px 12px;
+      font-family: "Anybody", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111;
+      background: #fff;
+    }
+
+    #family-system-sheet .footer-collage {
+      position: relative;
+      margin-top: 28px;
+      padding: 28px;
+      border: 2px dashed #5a8500;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.05)),
+        url('assets/20250818_125758.jpg') center 38% / cover no-repeat;
+      overflow: hidden;
+    }
+
+    #family-system-sheet .footer-collage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(18,18,18,0.72);
+    }
+
+    #family-system-sheet .footer-collage > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #family-system-sheet .flash-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    #family-system-sheet .flash-card {
+      background: #fff;
+      color: #111;
+      border: 3px solid var(--line);
+      box-shadow: 6px 6px 0 #000;
+      padding: 18px;
+      transform: rotate(-1deg);
+    }
+
+    #family-system-sheet .flash-card.alt {
+      background: var(--pink);
+      transform: rotate(1.2deg);
+    }
+
+    #family-system-sheet .flash-card h4 {
+      margin: 0 0 10px;
+      font-family: "Anybody", sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #family-system-sheet .riff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    #family-system-sheet .riff-grid.two-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #family-system-sheet .riff-card {
+      border: 3px solid var(--line);
+      box-shadow: 6px 6px 0 #000;
+      padding: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #family-system-sheet .riff-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      background: #fff;
+      color: #111;
+      border: 2px solid var(--line);
+      box-shadow: 3px 3px 0 #000;
+      font-family: "Anybody", sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #family-system-sheet .riff-text {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.08;
+    }
+
+    #family-system-sheet .riff-sub {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    #family-system-sheet .riff-1 {
+      background: linear-gradient(135deg, #141414 0 35%, #ce1212 35% 68%, #f6d84a 68% 100%);
+      color: #fff;
+      transform: rotate(-2deg);
+    }
+
+    #family-system-sheet .riff-2 {
+      background: linear-gradient(135deg, #98e000, #ffffff);
+      color: #111;
+      transform: rotate(1.4deg) translateY(14px);
+    }
+
+    #family-system-sheet .riff-3 {
+      background: linear-gradient(135deg, #ffd6f4, #ff8ad8 55%, #101010 55%);
+      color: #fff;
+      transform: rotate(-1deg);
+    }
+
+    #family-system-sheet .riff-4 {
+      background: linear-gradient(135deg, #101010, #98e000 78%);
+      color: #fff;
+      transform: rotate(2deg);
+    }
+
+    #family-system-sheet .riff-5 {
+      background: linear-gradient(135deg, #fff, #f3ecdf);
+      color: #111;
+      transform: rotate(-2.4deg) translateY(-10px);
+    }
+
+    #family-system-sheet .riff-6 {
+      background: linear-gradient(135deg, #b18cff, #ffffff 70%);
+      color: #fff;
+      transform: rotate(1deg);
+    }
+
+    #family-system-sheet .riff-7 {
+      background: linear-gradient(135deg, #101010, #ffffff 82%);
+      color: #fff;
+      transform: rotate(-1.4deg);
+    }
+
+    #family-system-sheet .riff-8 {
+      background: linear-gradient(135deg, #98e000, #ff86d8 72%);
+      color: #111;
+      transform: rotate(1.2deg);
+    }
+
+    #family-system-sheet .riff-3 .riff-label,
+    #family-system-sheet .riff-4 .riff-label,
+    #family-system-sheet .riff-6 .riff-label,
+    #family-system-sheet .riff-7 .riff-label {
+      background: #ffe750;
+      color: #111;
+    }
+
     #family-system-sheet .lime-section {
       background: var(--acid);
       border-top: 2px solid var(--line);
@@ -730,7 +972,11 @@ $html = @"
       #family-system-sheet .weekly-grid,
       #family-system-sheet .formula-grid,
       #family-system-sheet .stat-grid,
-      #family-system-sheet .split-body {
+      #family-system-sheet .split-body,
+      #family-system-sheet .photo-riff,
+      #family-system-sheet .flash-row,
+      #family-system-sheet .riff-grid,
+      #family-system-sheet .riff-grid.two-up {
         grid-template-columns: 1fr;
       }
 
@@ -842,7 +1088,6 @@ $callouts
               <li><span class="num">04</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
               <li><span class="num">05</span><span>Bought phone time must be bought in advance. One voucher per day max, and unused daily phone time does not normally roll over.</span></li>
             </ol>
-            <div style="margin:18px -22px -22px; background:#191919; color:#fff; padding:12px 18px; font-family:'Anybody',sans-serif; font-style:italic; text-transform:uppercase; overflow:hidden; white-space:nowrap;">* if you want more phone time, budget it * screens are tools, not defaults *</div>
           </div>
 
           <div>
@@ -872,6 +1117,7 @@ $callouts
             </div>
           </div>
         </div>
+
       </section>
 
       <section class="section lime-section">
@@ -894,6 +1140,8 @@ $callouts
               <h3>Nag-o-meter</h3>
               <ul>
 $thresholdItems
+$allowanceDeductionItems
+$appealItems
               </ul>
               <div style="margin-top:12px; font-size:14px;">$($data.points.houseReward)</div>
             </div>
@@ -926,6 +1174,10 @@ $parentsCoverItems
             </div>
           </div>
         </div>
+
+        <div class="photo-riff">
+$galleryMarkup
+        </div>
       </section>
 
       <section class="section footer-band">
@@ -943,6 +1195,10 @@ $weekAItems
 $weekBItems
             </ul>
           </div>
+        </div>
+
+        <div class="riff-grid two-up" style="margin-top:22px;">
+$riffA
         </div>
 
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
@@ -984,6 +1240,10 @@ $oldPhoneItems
           </div>
         </div>
 
+        <div class="riff-grid two-up" style="margin-top:22px;">
+$riffB
+        </div>
+
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
           <div class="light-card">
             <h3>House points</h3>
@@ -997,6 +1257,10 @@ $houseItems
 $behaviourItems
             </ul>
           </div>
+        </div>
+
+        <div class="riff-grid two-up" style="margin-top:22px;">
+$riffC
         </div>
 
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
@@ -1020,10 +1284,27 @@ $appealItems
           </div>
         </div>
 
-        <div class="footer-box" style="margin-top:32px;">
-          <h3>Ready to try it?</h3>
-          <p>This version keeps the layout stylish but the rules concrete: clear formulas, clear boundaries, clear paid jobs, and a shared understanding of what children cover and what parents still cover.</p>
-          <div class="footer-meta">Phone spreadsheet formula: <code>$($data.phone.spreadsheet)</code> | Edit <code>family-system-data.json</code> and rerender to update.</div>
+        <div class="riff-grid two-up" style="margin-top:24px;">
+$riffD
+        </div>
+
+        <div class="footer-collage">
+          <div class="flash-row">
+            <div class="flash-card">
+              <h4>Brat Pact energy</h4>
+              <p>More freedom, more budgeting, more responsibility, less endless negotiating.</p>
+            </div>
+            <div class="flash-card alt">
+              <h4>Rules with personality</h4>
+              <p>The aim is not to make the house harsher. It is to make expectations clearer, more stylish, and easier to stick to.</p>
+            </div>
+          </div>
+
+          <div class="footer-box" style="margin-top:32px;">
+            <h3>Ready to try it?</h3>
+            <p>This version keeps the layout stylish but the rules concrete: clear formulas, clear boundaries, clear paid jobs, and a shared understanding of what children cover and what parents still cover.</p>
+            <div class="footer-meta">Phone spreadsheet formula: <code>$($data.phone.spreadsheet)</code> | Edit <code>family-system-data.json</code> and rerender to update.</div>
+          </div>
         </div>
       </section>
     </div>
