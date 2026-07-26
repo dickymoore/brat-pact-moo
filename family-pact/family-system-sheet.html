@@ -124,8 +124,17 @@
       display: grid;
       grid-template-columns: 1.05fr 1fr;
       gap: 22px;
-      align-items: end;
+      align-items: start;
       overflow: hidden;
+    }
+
+    #family-system-sheet .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+      min-height: 100%;
+      gap: 28px;
     }
 
     #family-system-sheet .title-card {
@@ -225,10 +234,10 @@
 
     #family-system-sheet .hero-sticker {
       position: absolute;
-      right: 18px;
-      top: 30px;
+      left: 18px;
+      bottom: 70px;
       z-index: 3;
-      transform: rotate(9deg);
+      transform: rotate(-5deg);
       padding: 12px;
       background: rgba(255,255,255,0.7);
       border: 2px solid rgba(0,0,0,0.2);
@@ -693,11 +702,13 @@
       <span>phones charge downstairs overnight</span>
       <span>if you want more money, earn it</span>
       <span>if you want more phone time, budget it</span>
+      <span>spotify and whatsapp are unlimited for music and social planning only</span>
       <span>working draft for family discussion</span>
       <span>more independence = more responsibility</span>
       <span>phones charge downstairs overnight</span>
       <span>if you want more money, earn it</span>
       <span>if you want more phone time, budget it</span>
+      <span>spotify and whatsapp are unlimited for music and social planning only</span>
       </div>
     </div>
 
@@ -716,22 +727,21 @@
 
     <div class="layout">
       <section class="section hero">
-        <div>
+        <div class="hero-copy">
           <div class="title-card">
             <h1>Brat<br/>Pact</h1>
             <div class="draft-tag">Working draft | review: 13 September 2026</div>
           </div>
-          
           <div class="callout">
       <span>Phones charge downstairs overnight</span>
-      <span>Social planning counts within phone time</span>
-      <span>No ad hoc top-ups</span>
+      <span>Spotify and WhatsApp are unlimited</span>
+      <span>One phone-time voucher per day max</span>
           </div>
         </div>
         <div style="position:relative;">
                 <figure class="hero-photo photo-card">
         <img src="assets/family-photo-hero.png" alt="Family photo of Dicky, Jessica, Kit and Obie outdoors in the sunshine" />
-        <figcaption>Summer family photo for the Brat Pact cover.</figcaption>
+        
       </figure>
           <div class="hero-sticker">
             <div>Phone-first rules</div>
@@ -751,18 +761,18 @@
           </div>
           <div class="formula-card">
             <span class="card-kicker">Phone formula</span>
-            <div class="card-number">16 -> 210 mins a day</div>
-            <p class="card-note">14 -> 150 mins a day<br/>30 minutes + ((age - 10) x 30 minutes)</p>
+            <div class="card-number">16 years old -> 210 mins a day</div>
+            <p class="card-note">14 years old -> 150 mins a day<br/>Spotify and WhatsApp are unlimited for music and social planning only.</p>
           </div>
           <div class="formula-card">
             <span class="card-kicker">Transition bonus</span>
-            <div class="card-number">+30 minutes per day during the transition</div>
-            <p class="card-note">Extra time is not random. It must be budgeted, earned or bought.</p>
+            <div class="card-number">Immediately jump to your next age level</div>
+            <p class="card-note">That means at least a 30 minute bump in your daily allowance</p>
           </div>
           <div class="formula-card">
             <span class="card-kicker">Current monthly amounts</span>
             <div class="card-number">Kit: £40<br/>Obie: £35</div>
-            <p class="card-note">Base allowance first. Extra money comes from paid jobs.</p>
+            <p class="card-note">Base allowance first. Extra money comes from paid jobs.<br/>During school term: additional allowance for eating at school or college is £35 per month</p>
           </div>
         </div>
       </section>
@@ -772,11 +782,11 @@
           <div class="light-card">
             <h3 class="serif-title">Digital Code</h3>
             <ol class="numbered-list">
-              <li><span class="num">01</span><span>Phone time includes social planning and messaging. It must be budgeted within the daily limit, not unlocked as extra.</span></li>
-              <li><span class="num">02</span><span>No TikTok, YouTube Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
-              <li><span class="num">03</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
-              <li><span class="num">04</span><span>TV and laptop are still entertainment and cannot become a loophole once phone time has run out.</span></li>
-              <li><span class="num">05</span><span>Bought phone time must be bought in advance, and unused daily phone time does not normally roll over.</span></li>
+              <li><span class="num">01</span><span>Spotify and WhatsApp are unlimited in Kidslox for music and social planning only. Do not misuse them by watching videos on them.</span></li>
+              <li><span class="num">02</span><span>No looking at phones in bed, in morning or evening.</span></li>
+              <li><span class="num">03</span><span>No TikTok, YouTube Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
+              <li><span class="num">04</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
+              <li><span class="num">05</span><span>Bought phone time must be bought in advance. One voucher per day max, and unused daily phone time does not normally roll over.</span></li>
             </ol>
             <div style="margin:18px -22px -22px; background:#191919; color:#fff; padding:12px 18px; font-family:'Anybody',sans-serif; font-style:italic; text-transform:uppercase; overflow:hidden; white-space:nowrap;">* if you want more phone time, budget it * screens are tools, not defaults *</div>
           </div>
@@ -788,16 +798,16 @@
             </div>
             <div class="stat-grid">
               <div class="stat-box">
-                <strong>Ofcom 2024</strong>
-                <div>Ofcom 2024: 4-15s averaged 8h 29m a week on video-sharing platforms</div>
+                <strong>Old limits</strong>
+                <div>Kit old limit: 180 minutes per day</div>
               </div>
               <div class="stat-box">
-                <strong>YouTube 2024</strong>
-                <div>Ofcom 2024: 12-15s averaged 6h 34m a week of YouTube viewing in the home</div>
+                <strong>Old limits</strong>
+                <div>Obie old limit: 90 minutes per day</div>
               </div>
               <div class="stat-box">
-                <strong>Sleep rule</strong>
-                <div>NHS-style guidance: keep at least 60 minutes screen-free before sleep</div>
+                <strong>Voucher</strong>
+                <div>30 minutes = £3.00</div>
               </div>
             </div>
             <div style="margin-top:18px;">
@@ -807,7 +817,7 @@
       </div>
             </div>
             <div class="mini-note">
-              <strong>Buy more phone time:</strong> 30 minutes = £1.50
+              <strong>Kidslox note:</strong> Spotify and WhatsApp should be unlimited for music and social planning. Do not misuse them to watch videos.
             </div>
           </div>
         </div>
@@ -830,11 +840,11 @@
 
           <div class="stack">
             <div class="dark-card">
-              <h3>Point ledger</h3>
+              <h3>Nag-o-meter</h3>
               <ul>
-        <li>1 point: warning and same-day correction</li>
-        <li>2 points in a week: minus 30 mins phone time next day</li>
-        <li>3 points in a week: home detention</li>
+        <li>Nagged once: Warning nag - Yellow card</li>
+        <li>Nagged twice: Minus 30 minutes phone time from the next day - Red card</li>
+        <li>Nagged three times: Minus additional 60 minutes phone time from the next day</li>
               </ul>
               <div style="margin-top:12px; font-size:14px;">Every 5 house points can be exchanged for 30 minutes extra phone time or £2 allowance credit</div>
             </div>
@@ -842,11 +852,13 @@
               <h3>Extra paid jobs</h3>
               <div style="font-size:14px; margin-bottom:10px;">Suggested extra-job rate: about £8 per hour</div>
               <ul>
-        <li>Deep clean bathroom: £3</li>
-        <li>Mow lawn: £3-£4</li>
-        <li>Car clean: £4</li>
-        <li>Weeding or a bigger garden task: £2-£4</li>
-        <li>Sorting a cupboard or storage area: £2-£3</li>
+        <li>Deep clean bathroom: £8</li>
+        <li>Mow lawn: £4</li>
+        <li>Cut grass borders in garden: £4</li>
+        <li>Car clean outside: £4</li>
+        <li>Car clean inside: £4</li>
+        <li>Weeding or a bigger garden task: £4+</li>
+        <li>Sorting a cupboard or storage area: £4+</li>
               </ul>
             </div>
           </div>
@@ -864,6 +876,8 @@
         <li>Haircuts</li>
         <li>Snacks and treats</li>
         <li>Small social spending</li>
+        <li>Deodorant and specialist toiletries</li>
+        <li>Eating out with friends</li>
               </ul>
             </div>
             <div class="split-col" style="background:#eceae5;">
@@ -873,7 +887,8 @@
         <li>School shoes if needed for school</li>
         <li>Sports kit required for school or clubs</li>
         <li>Winter coat</li>
-        <li>Toiletries and household basics</li>
+        <li>Basic toiletries</li>
+        <li>Kitchen food</li>
         <li>Phone contract</li>
         <li>Urgent essential replacement clothing</li>
               </ul>
@@ -916,7 +931,7 @@
         <li>Put recycling out every day</li>
         <li>Empty indoor recycling into main bins as needed</li>
         <li>Water front and back gardens on agreed days</li>
-        <li>Do a quick check for outdoor clutter</li>
+        <li>Do a quick check for indoor and outdoor clutter</li>
             </ul>
           </div>
         </div>
@@ -925,22 +940,28 @@
           <div class="light-card">
             <h3>Buy more phone time</h3>
             <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
-              <strong>Rate:</strong> 30 minutes = £1.50
+              <strong>Rate:</strong> 30 minutes = £3.00
             </div>
             <ul>
         <li>Buy in advance, not in the moment after time has run out</li>
-        <li>Maximum 30 extra minutes in one day</li>
-        <li>Maximum 90 extra minutes in one week</li>
+        <li>Maximum one voucher per day</li>
         <li>Bought time still does not override first-hour or last-hour rules</li>
             </ul>
           </div>
           <div class="light-card">
-            <h3>Other screens</h3>
+            <h3>Phone age levels</h3>
             <ul>
-        <li>Laptop and solo TV still count as entertainment</li>
-        <li>Suggested limit: no more than 1 additional hour of recreational laptop or solo TV on a normal day</li>
-        <li>Family films or shared watching can be treated separately</li>
+        <li>16 years old: 210 minutes per day</li>
+        <li>15 years old: 180 minutes per day</li>
+        <li>14 years old: 150 minutes per day</li>
             </ul>
+            <div class="mini-note">
+              <strong>Current/old limits:</strong>
+              <ul style="margin-top:8px;">
+        <li>Kit old limit: 180 minutes per day</li>
+        <li>Obie old limit: 90 minutes per day</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -955,12 +976,13 @@
             </ul>
           </div>
           <div class="light-card">
-            <h3>Behaviour points</h3>
+            <h3>Behaviour points example (or Nag points - see Nag-o-meter)</h3>
             <ul>
         <li>Missed room or shared-space standard</li>
         <li>Missed rota job</li>
         <li>Wrappers, bowls or cups left around</li>
-        <li>Bags, clothes or socks left dumped</li>
+        <li>Bags, clothes, socks or shoes left dumped</li>
+        <li>Mud left without being cleaned up</li>
         <li>Arguing or delaying instead of doing the job</li>
             </ul>
           </div>
@@ -970,10 +992,9 @@
           <div class="light-card">
             <h3>Allowance deductions</h3>
             <ul>
-        <li>0-1 behaviour points: full allowance</li>
-        <li>2-3 behaviour points: no allowance reduction</li>
-        <li>4-5 behaviour points: 20% reduction from next allowance payment</li>
-        <li>6+ behaviour points: 50% reduction and family review</li>
+        <li>Nagged four times: 20% reduction in next week allowance</li>
+        <li>Nagged five times: 40% reduction in next week allowance</li>
+        <li>Nagged six or more times: 50% reduction plus further sanctions</li>
             </ul>
           </div>
           <div class="light-card">
@@ -983,6 +1004,12 @@
         <li>Each child gets £10 for every book plus book report delivered, provided the book is at or above their recommended reading age</li>
         <li>The book report can be written, performed as a speech, or made as a video</li>
             </ul>
+            <div class="mini-note">
+              <strong>Appeals:</strong>
+              <ul style="margin-top:8px;">
+        <li>Appeals for review can be submitted in writing only</li>
+              </ul>
+            </div>
           </div>
         </div>
 

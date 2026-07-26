@@ -7,7 +7,8 @@
     "more independence = more responsibility",
     "phones charge downstairs overnight",
     "if you want more money, earn it",
-    "if you want more phone time, budget it"
+    "if you want more phone time, budget it",
+    "spotify and whatsapp are unlimited for music and social planning only"
   ],
   "masthead": {
     "label": "Brat Pact",
@@ -22,7 +23,7 @@
     "hero": {
       "path": "assets/family-photo-hero.png",
       "alt": "Family photo of Dicky, Jessica, Kit and Obie outdoors in the sunshine",
-      "caption": "Summer family photo for the Brat Pact cover."
+      "caption": ""
     },
     "side": {
       "path": "",
@@ -32,25 +33,29 @@
   },
   "callouts": [
     "Phones charge downstairs overnight",
-    "Social planning counts within phone time",
-    "No ad hoc top-ups"
+    "Spotify and WhatsApp are unlimited",
+    "One phone-time voucher per day max"
   ],
   "allowance": {
     "formula": "Age x 2.5 per month, rounded to the nearest £5",
     "kit": "16 x 2.5 = £40 per month",
     "obie": "14 x 2.5 = £35 per month",
+    "schoolTermExtra": "During school term: additional allowance for eating at school or college is £35 per month",
     "covers": [
       "Everyday clothes",
       "Haircuts",
       "Snacks and treats",
-      "Small social spending"
+      "Small social spending",
+      "Deodorant and specialist toiletries",
+      "Eating out with friends"
     ],
     "parentsCover": [
       "School uniform",
       "School shoes if needed for school",
       "Sports kit required for school or clubs",
       "Winter coat",
-      "Toiletries and household basics",
+      "Basic toiletries",
+      "Kitchen food",
       "Phone contract",
       "Urgent essential replacement clothing"
     ]
@@ -58,11 +63,23 @@
   "phone": {
     "formula": "30 minutes + ((age - 10) x 30 minutes)",
     "spreadsheet": "=SUM((Age-10)*30+30)",
-    "transitionBonus": "+30 minutes per day during the transition",
-    "kit": "16 -> 210 mins a day",
-    "obie": "14 -> 150 mins a day",
+    "transitionBonus": "Immediately jump to your next age level",
+    "transitionNote": "That means at least a 30 minute bump in your daily allowance",
+    "currentOld": [
+      "Kit old limit: 180 minutes per day",
+      "Obie old limit: 90 minutes per day"
+    ],
+    "ageLevels": [
+      "16 years old: 210 minutes per day",
+      "15 years old: 180 minutes per day",
+      "14 years old: 150 minutes per day"
+    ],
+    "kit": "16 years old -> 210 mins a day",
+    "obie": "14 years old -> 150 mins a day",
     "rules": [
-      "Phone time includes social planning and messaging",
+      "Spotify and WhatsApp are unlimited in Kidslox for music and social planning",
+      "Do not misuse Spotify or WhatsApp by watching videos on them",
+      "No looking at phones in bed, in morning or evening",
       "No TikTok, Shorts or Reels in the first hour after waking",
       "No TikTok, Shorts or Reels in the final hour before bed",
       "Phones charge downstairs overnight",
@@ -71,19 +88,13 @@
       "Unused daily phone time does not normally roll over"
     ],
     "buyMore": {
-      "rate": "30 minutes = £1.50",
+      "rate": "30 minutes = £3.00",
       "limits": [
         "Buy in advance, not in the moment after time has run out",
-        "Maximum 30 extra minutes in one day",
-        "Maximum 90 extra minutes in one week",
+        "Maximum one voucher per day",
         "Bought time still does not override first-hour or last-hour rules"
       ]
-    },
-    "otherScreens": [
-      "Laptop and solo TV still count as entertainment",
-      "Suggested limit: no more than 1 additional hour of recreational laptop or solo TV on a normal day",
-      "Family films or shared watching can be treated separately"
-    ]
+    }
   },
   "rewards": {
     "headline": "Bonus rewards",
@@ -105,19 +116,22 @@
       "Missed room or shared-space standard",
       "Missed rota job",
       "Wrappers, bowls or cups left around",
-      "Bags, clothes or socks left dumped",
+      "Bags, clothes, socks or shoes left dumped",
+      "Mud left without being cleaned up",
       "Arguing or delaying instead of doing the job"
     ],
     "thresholds": [
-      "1 point: warning and same-day correction",
-      "2 points in a week: minus 30 mins phone time next day",
-      "3 points in a week: home detention"
+      "Nagged once: Warning nag - Yellow card",
+      "Nagged twice: Minus 30 minutes phone time from the next day - Red card",
+      "Nagged three times: Minus additional 60 minutes phone time from the next day"
     ],
     "allowanceDeductions": [
-      "0-1 behaviour points: full allowance",
-      "2-3 behaviour points: no allowance reduction",
-      "4-5 behaviour points: 20% reduction from next allowance payment",
-      "6+ behaviour points: 50% reduction and family review"
+      "Nagged four times: 20% reduction in next week allowance",
+      "Nagged five times: 40% reduction in next week allowance",
+      "Nagged six or more times: 50% reduction plus further sanctions"
+    ],
+    "appeals": [
+      "Appeals for review can be submitted in writing only"
     ]
   },
   "daily": {
@@ -151,18 +165,20 @@
         "Put recycling out every day",
         "Empty indoor recycling into main bins as needed",
         "Water front and back gardens on agreed days",
-        "Do a quick check for outdoor clutter"
+        "Do a quick check for indoor and outdoor clutter"
       ]
     }
   },
   "jobs": {
     "rate": "Suggested extra-job rate: about £8 per hour",
     "items": [
-      "Deep clean bathroom: £3",
-      "Mow lawn: £3-£4",
-      "Car clean: £4",
-      "Weeding or a bigger garden task: £2-£4",
-      "Sorting a cupboard or storage area: £2-£3"
+      "Deep clean bathroom: £8",
+      "Mow lawn: £4",
+      "Cut grass borders in garden: £4",
+      "Car clean outside: £4",
+      "Car clean inside: £4",
+      "Weeding or a bigger garden task: £4+",
+      "Sorting a cupboard or storage area: £4+"
     ]
   },
   "research": {

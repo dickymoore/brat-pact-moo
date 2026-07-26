@@ -36,10 +36,12 @@ function Get-ImageMarkup {
 "@
     }
 
+    $captionMarkup = if ([string]::IsNullOrWhiteSpace($Caption)) { "" } else { "<figcaption>$Caption</figcaption>" }
+
     return @"
       <figure class="$CssClass photo-card">
         <img src="$Path" alt="$Alt" />
-        <figcaption>$Caption</figcaption>
+        $captionMarkup
       </figure>
 "@
 }
@@ -51,6 +53,7 @@ $allowanceItems = New-ListItems $data.allowance.covers
 $parentsCoverItems = New-ListItems $data.allowance.parentsCover
 $thresholdItems = New-ListItems $data.points.thresholds
 $allowanceDeductionItems = New-ListItems $data.points.allowanceDeductions
+$appealItems = New-ListItems $data.points.appeals
 $weekAItems = New-ListItems $data.rota.weekA
 $weekBItems = New-ListItems $data.rota.weekB
 $dishwasherItems = New-ListItems $data.rota.roles.dishwasher
@@ -59,8 +62,9 @@ $jobItems = New-ListItems $data.jobs.items
 $houseItems = New-ListItems $data.points.house
 $behaviourItems = New-ListItems $data.points.behaviour
 $buyMoreItems = New-ListItems $data.phone.buyMore.limits
-$otherScreenItems = New-ListItems $data.phone.otherScreens
 $rewardItems = New-ListItems $data.rewards.items
+$ageLevelItems = New-ListItems $data.phone.ageLevels
+$oldPhoneItems = New-ListItems $data.phone.currentOld
 
 $heroImage = Get-ImageMarkup -Path $data.images.hero.path -Alt $data.images.hero.alt -Caption $data.images.hero.caption -CssClass "hero-photo"
 $sideImage = Get-ImageMarkup -Path $data.images.side.path -Alt $data.images.side.alt -Caption $data.images.side.caption -CssClass "side-photo"
@@ -192,8 +196,17 @@ $html = @"
       display: grid;
       grid-template-columns: 1.05fr 1fr;
       gap: 22px;
-      align-items: end;
+      align-items: start;
       overflow: hidden;
+    }
+
+    #family-system-sheet .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+      min-height: 100%;
+      gap: 28px;
     }
 
     #family-system-sheet .title-card {
@@ -293,10 +306,10 @@ $html = @"
 
     #family-system-sheet .hero-sticker {
       position: absolute;
-      right: 18px;
-      top: 30px;
+      left: 18px;
+      bottom: 70px;
       z-index: 3;
-      transform: rotate(9deg);
+      transform: rotate(-5deg);
       padding: 12px;
       background: rgba(255,255,255,0.7);
       border: 2px solid rgba(0,0,0,0.2);
@@ -773,12 +786,11 @@ $navItems
 
     <div class="layout">
       <section class="section hero">
-        <div>
+        <div class="hero-copy">
           <div class="title-card">
             <h1>Brat<br/>Pact</h1>
             <div class="draft-tag">Working draft | review: $($data.reviewDate)</div>
           </div>
-          $(if ([string]::IsNullOrWhiteSpace($data.subtitle)) { "" } else { "<p class=`"subtitle`">$($data.subtitle)</p>" })
           <div class="callout">
 $callouts
           </div>
@@ -804,17 +816,17 @@ $callouts
           <div class="formula-card">
             <span class="card-kicker">Phone formula</span>
             <div class="card-number">$($data.phone.kit)</div>
-            <p class="card-note">$($data.phone.obie)<br/>$($data.phone.formula)</p>
+            <p class="card-note">$($data.phone.obie)<br/>Spotify and WhatsApp are unlimited for music and social planning only.</p>
           </div>
           <div class="formula-card">
             <span class="card-kicker">Transition bonus</span>
             <div class="card-number">$($data.phone.transitionBonus)</div>
-            <p class="card-note">Extra time is not random. It must be budgeted, earned or bought.</p>
+            <p class="card-note">$($data.phone.transitionNote)</p>
           </div>
           <div class="formula-card">
             <span class="card-kicker">Current monthly amounts</span>
             <div class="card-number">Kit: £40<br/>Obie: £35</div>
-            <p class="card-note">Base allowance first. Extra money comes from paid jobs.</p>
+            <p class="card-note">Base allowance first. Extra money comes from paid jobs.<br/>$($data.allowance.schoolTermExtra)</p>
           </div>
         </div>
       </section>
@@ -824,11 +836,11 @@ $callouts
           <div class="light-card">
             <h3 class="serif-title">Digital Code</h3>
             <ol class="numbered-list">
-              <li><span class="num">01</span><span>Phone time includes social planning and messaging. It must be budgeted within the daily limit, not unlocked as extra.</span></li>
-              <li><span class="num">02</span><span>No TikTok, YouTube Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
-              <li><span class="num">03</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
-              <li><span class="num">04</span><span>TV and laptop are still entertainment and cannot become a loophole once phone time has run out.</span></li>
-              <li><span class="num">05</span><span>Bought phone time must be bought in advance, and unused daily phone time does not normally roll over.</span></li>
+              <li><span class="num">01</span><span>Spotify and WhatsApp are unlimited in Kidslox for music and social planning only. Do not misuse them by watching videos on them.</span></li>
+              <li><span class="num">02</span><span>No looking at phones in bed, in morning or evening.</span></li>
+              <li><span class="num">03</span><span>No TikTok, YouTube Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
+              <li><span class="num">04</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
+              <li><span class="num">05</span><span>Bought phone time must be bought in advance. One voucher per day max, and unused daily phone time does not normally roll over.</span></li>
             </ol>
             <div style="margin:18px -22px -22px; background:#191919; color:#fff; padding:12px 18px; font-family:'Anybody',sans-serif; font-style:italic; text-transform:uppercase; overflow:hidden; white-space:nowrap;">* if you want more phone time, budget it * screens are tools, not defaults *</div>
           </div>
@@ -840,23 +852,23 @@ $callouts
             </div>
             <div class="stat-grid">
               <div class="stat-box">
-                <strong>Ofcom 2024</strong>
-                <div>$($data.research.stats[0])</div>
+                <strong>Old limits</strong>
+                <div>$($data.phone.currentOld[0])</div>
               </div>
               <div class="stat-box">
-                <strong>YouTube 2024</strong>
-                <div>$($data.research.stats[1])</div>
+                <strong>Old limits</strong>
+                <div>$($data.phone.currentOld[1])</div>
               </div>
               <div class="stat-box">
-                <strong>Sleep rule</strong>
-                <div>$($data.research.stats[2])</div>
+                <strong>Voucher</strong>
+                <div>$($data.phone.buyMore.rate)</div>
               </div>
             </div>
             <div style="margin-top:18px;">
               $sideImage
             </div>
             <div class="mini-note">
-              <strong>Buy more phone time:</strong> $($data.phone.buyMore.rate)
+              <strong>Kidslox note:</strong> Spotify and WhatsApp should be unlimited for music and social planning. Do not misuse them to watch videos.
             </div>
           </div>
         </div>
@@ -879,7 +891,7 @@ $callouts
 
           <div class="stack">
             <div class="dark-card">
-              <h3>Point ledger</h3>
+              <h3>Nag-o-meter</h3>
               <ul>
 $thresholdItems
               </ul>
@@ -959,10 +971,16 @@ $buyMoreItems
             </ul>
           </div>
           <div class="light-card">
-            <h3>Other screens</h3>
+            <h3>Phone age levels</h3>
             <ul>
-$otherScreenItems
+$ageLevelItems
             </ul>
+            <div class="mini-note">
+              <strong>Current/old limits:</strong>
+              <ul style="margin-top:8px;">
+$oldPhoneItems
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -974,7 +992,7 @@ $houseItems
             </ul>
           </div>
           <div class="light-card">
-            <h3>Behaviour points</h3>
+            <h3>Behaviour points example (or Nag points - see Nag-o-meter)</h3>
             <ul>
 $behaviourItems
             </ul>
@@ -993,6 +1011,12 @@ $allowanceDeductionItems
             <ul>
 $rewardItems
             </ul>
+            <div class="mini-note">
+              <strong>Appeals:</strong>
+              <ul style="margin-top:8px;">
+$appealItems
+              </ul>
+            </div>
           </div>
         </div>
 
