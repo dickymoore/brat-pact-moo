@@ -80,6 +80,13 @@
   "phone": {
     "formula": "30 minutes + ((age - 10) x 30 minutes)",
     "spreadsheet": "=SUM((Age-10)*30+30)",
+    "curfewFormula": "Usual curfew: age + 6 hours (24-hour clock)",
+    "holidayBonus": "Holiday mode: one hour later",
+    "curfewLevels": [
+      "16 years old: 22:00 usual, 23:00 in holidays",
+      "15 years old: 21:00 usual, 22:00 in holidays",
+      "14 years old: 20:00 usual, 21:00 in holidays"
+    ],
     "transitionBonus": "Immediately jump to your next age level",
     "transitionNote": "That means at least a 30 minute bump in your daily allowance",
     "currentOld": [
@@ -99,6 +106,8 @@
       "No looking at phones in bed, in morning or evening",
       "No TikTok, Shorts or Reels in the first hour after waking",
       "No TikTok, Shorts or Reels in the final hour before bed",
+      "Usual phone curfew is age plus 6 hours on a 24-hour clock",
+      "Holiday mode means the curfew is one hour later",
       "Phones charge downstairs overnight",
       "No extra top-ups in the moment",
       "No switching to TV or laptop as a loophole",

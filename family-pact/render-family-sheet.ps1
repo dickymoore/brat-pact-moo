@@ -77,6 +77,7 @@ $behaviourItems = New-ListItems $data.points.behaviour
 $buyMoreItems = New-ListItems $data.phone.buyMore.limits
 $rewardItems = New-ListItems $data.rewards.items
 $ageLevelItems = New-ListItems $data.phone.ageLevels
+$curfewLevelItems = New-ListItems $data.phone.curfewLevels
 $oldPhoneItems = New-ListItems $data.phone.currentOld
 $galleryMarkup = Get-GalleryMarkup $data.images.gallery
 function Get-CalloutRiffMarkup {
@@ -1236,6 +1237,31 @@ $ageLevelItems
               <ul style="margin-top:8px;">
 $oldPhoneItems
               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-grid" style="margin-top:22px; align-items:start;">
+          <div class="light-card">
+            <h3>Phone curfew times</h3>
+            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
+              <strong>Usual rule:</strong> $($data.phone.curfewFormula)
+            </div>
+            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
+              <strong>Holiday bonus:</strong> $($data.phone.holidayBonus)
+            </div>
+            <ul>
+$curfewLevelItems
+            </ul>
+          </div>
+          <div class="light-card">
+            <h3>Current monthly amounts</h3>
+            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
+              <strong>Base allowance:</strong> Kit: £40 | Obie: £35
+            </div>
+            <div>$($data.allowance.schoolTermExtra)</div>
+            <div class="mini-note">
+              <strong>Reminder:</strong> Base allowance first. Extra money comes from paid jobs.
             </div>
           </div>
         </div>
