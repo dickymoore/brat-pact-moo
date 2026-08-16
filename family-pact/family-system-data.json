@@ -1,14 +1,14 @@
 {
-  "title": "Family Money, Phone and Responsibilities",
+  "title": "Brat Pact",
   "subtitle": "",
   "reviewDate": "13 September 2026",
   "ticker": [
     "working draft for family discussion",
-    "more independence = more responsibility",
+    "clear expectations for home, money and phone time",
     "phones charge downstairs overnight",
-    "if you want more money, earn it",
-    "if you want more phone time, budget it",
-    "spotify and whatsapp are unlimited for music and social planning only"
+    "allowance follows shared responsibilities",
+    "budget tiktok, youtube and games carefully",
+    "spotify and whatsapp are unlimited until curfew"
   ],
   "masthead": {
     "label": "Brat Pact",
@@ -28,7 +28,7 @@
     "side": {
       "path": "assets/20250811_211203.jpg",
       "alt": "Family photo in front of old stone walls at dusk",
-      "caption": "You gotta learn how to keep your castle clean."
+      "caption": "Shared spaces work better when everyone resets them."
     },
     "gallery": [
       {
@@ -50,8 +50,8 @@
   },
   "callouts": [
     "Phones charge downstairs overnight",
-    "Spotify and WhatsApp are unlimited",
-    "One phone-time voucher per day max"
+    "Spotify and WhatsApp are unlimited until curfew",
+    "Allowance is based on daily baseline plus lead jobs"
   ],
   "allowance": {
     "formula": "Age x 2.5 per month, rounded to the nearest £5",
@@ -87,8 +87,6 @@
       "15 years old: 21:00 usual, 22:00 in holidays",
       "14 years old: 20:00 usual, 21:00 in holidays"
     ],
-    "transitionBonus": "Immediately jump to your next age level",
-    "transitionNote": "That means at least a 30 minute bump in your daily allowance",
     "currentOld": [
       "Kit old limit: 180 minutes per day",
       "Obie old limit: 90 minutes per day"
@@ -101,67 +99,39 @@
     "kit": "16 years old -> 210 mins a day",
     "obie": "14 years old -> 150 mins a day",
     "rules": [
-      "Spotify and WhatsApp are unlimited for music and social planning",
-      "Do not misuse Spotify or WhatsApp by watching videos on them",
-      "No looking at phones in bed, in morning or evening",
+      "Spotify and WhatsApp are unlimited until curfew for music and social planning",
+      "If you are at a social event, WhatsApp stays available for practical plans, but the phone should stay mostly away",
+      "Budget your limited phone time for TikTok, YouTube, games and other non-essential apps",
+      "Do not use Spotify or WhatsApp to watch videos or short-form content",
+      "No looking at phones in bed, in the morning or in the evening",
       "No TikTok, Shorts or Reels in the first hour after waking",
       "No TikTok, Shorts or Reels in the final hour before bed",
       "Usual phone curfew is age plus 6 hours on a 24-hour clock",
       "Holiday mode means the curfew is one hour later",
       "Phones charge downstairs overnight",
-      "No extra top-ups in the moment",
-      "No switching to TV or laptop as a loophole",
-      "Unused daily phone time does not normally roll over"
-    ],
-    "buyMore": {
-      "rate": "30 minutes = £3.00",
-      "limits": [
-        "Buy in advance, not in the moment after time has run out",
-        "Maximum one voucher per day",
-        "Bought time still does not override first-hour or last-hour rules"
-      ]
-    }
+      "The same boundaries apply on laptops and TV, so they are not a workaround"
+    ]
   },
   "rewards": {
-    "headline": "Bonus rewards",
+    "headline": "Reading bonus",
     "items": [
-      "Every 5 house points = 30 minutes extra phone time or £2 allowance credit",
       "Each child gets £10 for every book plus book report delivered, provided the book is at or above their recommended reading age",
       "The book report can be written, performed as a speech, or made as a video"
     ]
   },
   "points": {
-    "houseReward": "Every 5 house points can be exchanged for 30 minutes extra phone time or £2 allowance credit",
-    "house": [
-      "Do jobs without reminders",
-      "Show initiative",
-      "Help out well",
-      "Budget sensibly"
-    ],
-    "behaviour": [
-      "Missed room or shared-space standard",
-      "Missed rota job",
-      "Wrappers, bowls or cups left around",
-      "Bags, clothes, socks or shoes left dumped",
-      "Mud left without being cleaned up",
-      "Arguing or delaying instead of doing the job"
-    ],
+    "houseReward": "",
+    "house": [],
+    "behaviour": [],
     "thresholds": [
-      "Nagged once: Warning nag - Yellow card",
-      "Nagged twice: Minus 30 minutes phone time from the next day - Red card",
-      "Nagged three times: Minus additional 60 minutes phone time from the next day"
+      "Yellow card: a warning for missed chores or broken rules",
+      "Red card: if it keeps happening, allowance and/or screen time is removed"
     ],
-    "allowanceDeductions": [
-      "Nagged four times: 20% reduction in next week allowance",
-      "Nagged five times: 40% reduction in next week allowance",
-      "Nagged six or more times: 50% reduction plus further sanctions"
-    ],
-    "appeals": [
-      "Appeals for review can be submitted in writing only"
-    ]
+    "allowanceDeductions": [],
+    "appeals": []
   },
   "daily": {
-    "title": "Every day by 8:30pm",
+    "title": "Allowance is based on this daily baseline plus the lead jobs below",
     "items": [
       "Laundry in basket",
       "Bags and shoes put away",
@@ -190,28 +160,29 @@
       "recyclingGarden": [
         "Put recycling out every day",
         "Empty indoor recycling into main bins as needed",
-        "Water front and back gardens on agreed days",
+        "Water front and back gardens",
+        "Water Stacey the tree",
         "Do a quick check for indoor and outdoor clutter"
       ]
     }
   },
   "jobs": {
-    "rate": "Suggested extra-job rate: about £8 per hour",
+    "rate": "Each listed extra job: £8",
     "items": [
       "Deep clean bathroom: £8",
-      "Mow lawn: £4",
-      "Cut grass borders in garden: £4",
-      "Car clean outside: £4",
-      "Car clean inside: £4",
-      "Weeding or a bigger garden task: £4+",
-      "Sorting a cupboard or storage area: £4+"
+      "Mow lawn: £8",
+      "Cut grass borders in garden: £8",
+      "Car clean outside: £8",
+      "Car clean inside: £8",
+      "Weeding or a bigger garden task: £8",
+      "Sorting a cupboard or storage area: £8"
     ]
   },
   "calloutRiff": [
     {
       "label": "The Household chant",
       "text": "\"North London forever.\"",
-      "subtext": "Big team energy includes clean shoes, well tucked away."
+      "subtext": "Big team energy still includes clean shoes, well tucked away."
     },
     {
       "label": "Dishwasher Stacking",
@@ -231,22 +202,22 @@
     {
       "label": "Main character note",
       "text": "\"Main character energy is putting the bowl back in the kitchen.\"",
-      "subtext": "The household manifesto line."
+      "subtext": "A decent baseline for shared spaces."
     },
     {
-      "label": "Excuse check",
+      "label": "Straight answer",
       "text": "\"Do I look like I'm in Oklahoma?!\"",
-      "subtext": "The official response to nonsense excuses."
+      "subtext": "If something has gone wrong, say so plainly."
     },
     {
       "label": "Theatre cue",
       "text": "\"No way.\"",
-      "subtext": "The official response to random extra screen-time requests."
+      "subtext": "If you need a change, ask early rather than in the moment."
     },
     {
       "label": "The honour code",
       "text": "\"Friends don't lie.\"",
-      "subtext": "We weren't using Spotify and WhatsApp to watch short-form content."
+      "subtext": "Use Spotify and WhatsApp for what they are meant for."
     }
   ],
   "research": {

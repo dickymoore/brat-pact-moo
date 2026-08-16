@@ -65,16 +65,11 @@ $callouts = Join-Spans $data.callouts
 $allowanceItems = New-ListItems $data.allowance.covers
 $parentsCoverItems = New-ListItems $data.allowance.parentsCover
 $thresholdItems = New-ListItems $data.points.thresholds
-$allowanceDeductionItems = New-ListItems $data.points.allowanceDeductions
-$appealItems = New-ListItems $data.points.appeals
 $weekAItems = New-ListItems $data.rota.weekA
 $weekBItems = New-ListItems $data.rota.weekB
 $dishwasherItems = New-ListItems $data.rota.roles.dishwasher
 $recyclingItems = New-ListItems $data.rota.roles.recyclingGarden
 $jobItems = New-ListItems $data.jobs.items
-$houseItems = New-ListItems $data.points.house
-$behaviourItems = New-ListItems $data.points.behaviour
-$buyMoreItems = New-ListItems $data.phone.buyMore.limits
 $rewardItems = New-ListItems $data.rewards.items
 $ageLevelItems = New-ListItems $data.phone.ageLevels
 $curfewLevelItems = New-ListItems $data.phone.curfewLevels
@@ -1045,8 +1040,8 @@ $callouts
         <div style="position:relative;">
           $heroImage
           <div class="hero-sticker">
-            <div>Phone-first rules</div>
-            <div>Money with responsibility</div>
+            <div>Phone boundaries</div>
+            <div>Shared expectations</div>
           </div>
           <div class="hero-stamp">Est. Summer 2026</div>
         </div>
@@ -1063,12 +1058,12 @@ $callouts
           <div class="formula-card">
             <span class="card-kicker">Phone formula</span>
             <div class="card-number">$($data.phone.kit)</div>
-            <p class="card-note">$($data.phone.obie)<br/>Spotify and WhatsApp are unlimited for music and social planning only.</p>
+            <p class="card-note">$($data.phone.obie)<br/>Spotify and WhatsApp are unlimited until curfew for music and social planning.</p>
           </div>
           <div class="formula-card">
-            <span class="card-kicker">Transition bonus</span>
-            <div class="card-number">$($data.phone.transitionBonus)</div>
-            <p class="card-note">$($data.phone.transitionNote)</p>
+            <span class="card-kicker">Allowance depends on</span>
+            <div class="card-number">Daily baseline<br/>+ lead jobs</div>
+            <p class="card-note">Dishwasher lead, recycling lead, and the everyday baseline all need to be done.</p>
           </div>
           <div class="formula-card">
             <span class="card-kicker">Current monthly amounts</span>
@@ -1081,20 +1076,20 @@ $callouts
       <section class="section">
         <div class="editorial-grid">
           <div class="light-card">
-            <h3 class="serif-title">Digital Code</h3>
+            <h3 class="serif-title">Phone Boundaries</h3>
             <ol class="numbered-list">
-              <li><span class="num">01</span><span>Spotify and WhatsApp are unlimited in Kidslox for music and social planning only. Do not misuse them by watching videos on them.</span></li>
-              <li><span class="num">02</span><span>No looking at phones in bed, in morning or evening.</span></li>
-              <li><span class="num">03</span><span>No TikTok, YouTube Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
-              <li><span class="num">04</span><span>Phones charge downstairs overnight. No ad hoc top-ups when phone time has been used badly.</span></li>
-              <li><span class="num">05</span><span>Bought phone time must be bought in advance. One voucher per day max, and unused daily phone time does not normally roll over.</span></li>
+              <li><span class="num">01</span><span>Spotify and WhatsApp are unlimited until curfew for music and social planning.</span></li>
+              <li><span class="num">02</span><span>If you are at a social event, WhatsApp stays available for practical plans, but the phone should stay mostly away.</span></li>
+              <li><span class="num">03</span><span>Budget your limited phone time for TikTok, YouTube, games and other non-essential apps.</span></li>
+              <li><span class="num">04</span><span>No phones in bed, and no TikTok, Shorts or Reels in the first hour after waking or the final hour before bed.</span></li>
+              <li><span class="num">05</span><span>Phones charge downstairs overnight, and the same boundaries apply on laptops and TV.</span></li>
             </ol>
           </div>
 
           <div>
-            <h2 class="section-label" style="color:#1b1b1b;">Messy but meaningful</h2>
+            <h2 class="section-label" style="color:#1b1b1b;">How this works</h2>
             <div class="quote-card">
-              <p>"More independence = more responsibility."</p>
+              <p>"Clearer expectations make more freedom easier."</p>
             </div>
             <div class="stat-grid">
               <div class="stat-box">
@@ -1106,8 +1101,8 @@ $callouts
                 <div>$($data.phone.currentOld[1])</div>
               </div>
               <div class="stat-box">
-                <strong>Voucher</strong>
-                <div>$($data.phone.buyMore.rate)</div>
+                <strong>Unlimited</strong>
+                <div>WhatsApp and Spotify until curfew</div>
               </div>
             </div>
             <div style="margin-top:18px;">
@@ -1135,19 +1130,18 @@ $callouts
 
           <div class="stack">
             <div class="dark-card">
-              <h3>Nag-o-meter</h3>
+              <h3>Yellow and red cards</h3>
               <ul>
 $thresholdItems
-$allowanceDeductionItems
-$appealItems
               </ul>
-              <div style="margin-top:12px; font-size:14px;">$($data.points.houseReward)</div>
             </div>
             <div class="dark-card pink-card">
-              <h3>Extra paid jobs</h3>
-              <div style="font-size:14px; margin-bottom:10px;">$($data.jobs.rate)</div>
+              <h3>Allowance summary</h3>
+              <div style="font-size:14px; margin-bottom:10px;">Regular allowance depends on the baseline plus the two lead jobs.</div>
               <ul>
-$jobItems
+                <li>Daily baseline done</li>
+                <li>Dishwasher lead or recycling lead done properly</li>
+                <li>Extra money can still be earned separately through paid jobs</li>
               </ul>
             </div>
           </div>
@@ -1216,18 +1210,6 @@ $recyclingItems
 
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
           <div class="light-card">
-            <h3>Buy more phone time</h3>
-            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
-              <strong>Rate:</strong> $($data.phone.buyMore.rate)
-            </div>
-            <ul>
-$buyMoreItems
-            </ul>
-            <div class="mini-note">
-              <strong>Phone time note:</strong> Spotify and WhatsApp should be unlimited for music and social planning. Do not misuse them to watch videos.
-            </div>
-          </div>
-          <div class="light-card">
             <h3>Phone age levels</h3>
             <ul>
 $ageLevelItems
@@ -1238,10 +1220,10 @@ $ageLevelItems
 $oldPhoneItems
               </ul>
             </div>
+            <div class="mini-note">
+              <strong>Phone time note:</strong> Spotify and WhatsApp do not need budgeting. TikTok, YouTube, games and other non-essential apps do.
+            </div>
           </div>
-        </div>
-
-        <div class="editorial-grid" style="margin-top:22px; align-items:start;">
           <div class="light-card">
             <h3>Phone curfew times</h3>
             <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
@@ -1252,6 +1234,20 @@ $oldPhoneItems
             </div>
             <ul>
 $curfewLevelItems
+            </ul>
+          </div>
+        </div>
+
+        <div class="editorial-grid" style="margin-top:22px; align-items:start;">
+          <div class="light-card">
+            <h3>Allowance depends on</h3>
+            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
+              <strong>Core rule:</strong> daily baseline + dishwasher lead + recycling lead
+            </div>
+            <ul>
+              <li>The everyday baseline needs to be done without repeated reminders.</li>
+              <li>The weekly lead job needs to be done properly.</li>
+              <li>This is the basis for the regular allowance.</li>
             </ul>
           </div>
           <div class="light-card">
@@ -1272,15 +1268,15 @@ $riffB
 
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
           <div class="light-card">
-            <h3>House points</h3>
+            <h3>Yellow and red cards</h3>
             <ul>
-$houseItems
+$thresholdItems
             </ul>
           </div>
           <div class="light-card">
-            <h3>Behaviour points example (or Nag points - see Nag-o-meter)</h3>
+            <h3>$($data.rewards.headline)</h3>
             <ul>
-$behaviourItems
+$rewardItems
             </ul>
           </div>
         </div>
@@ -1291,21 +1287,21 @@ $riffC
 
         <div class="editorial-grid" style="margin-top:22px; align-items:start;">
           <div class="light-card">
-            <h3>Allowance deductions</h3>
+            <h3>Extra paid jobs</h3>
+            <div class="mini-note" style="margin-top:0; margin-bottom:14px;">
+              <strong>Rate:</strong> $($data.jobs.rate)
+            </div>
             <ul>
-$allowanceDeductionItems
+$jobItems
             </ul>
           </div>
           <div class="light-card">
-            <h3>$($data.rewards.headline)</h3>
-            <ul>
-$rewardItems
-            </ul>
+            <h3>What allowance covers</h3>
             <div class="mini-note">
-              <strong>Appeals:</strong>
-              <ul style="margin-top:8px;">
-$appealItems
-              </ul>
+              <strong>Children cover:</strong> clothes, haircuts, treats, social spending, deodorant and specialist toiletries.
+            </div>
+            <div class="mini-note">
+              <strong>Parents cover:</strong> uniform, required shoes or kit, winter coat, basic toiletries, kitchen food and the phone contract.
             </div>
           </div>
         </div>
@@ -1317,18 +1313,18 @@ $riffD
         <div class="footer-collage">
           <div class="flash-row">
             <div class="flash-card">
-              <h4>Brat Pact energy</h4>
-              <p>More freedom, more budgeting, more responsibility, less endless negotiating.</p>
+              <h4>Shared plan</h4>
+              <p>The aim is clearer routines, calmer conversations and more independence that actually works.</p>
             </div>
             <div class="flash-card alt">
-              <h4>Rules with personality</h4>
-              <p>The aim is not to make the house harsher. It is to make expectations clearer, more stylish, and easier to stick to.</p>
+              <h4>What good looks like</h4>
+              <p>Baseline done, lead jobs done, phones budgeted sensibly, and shared spaces reset without drama.</p>
             </div>
           </div>
 
           <div class="footer-box" style="margin-top:32px;">
             <h3>Ready to try it?</h3>
-            <p>This version keeps the layout stylish but the rules concrete: clear formulas, clear boundaries, clear paid jobs, and a shared understanding of what children cover and what parents still cover.</p>
+            <p>This version aims to keep the expectations clear: what the allowance is based on, what the phone rules are, and how extra money can still be earned.</p>
             <div class="footer-meta">Phone spreadsheet formula: <code>$($data.phone.spreadsheet)</code> | Edit <code>family-system-data.json</code> and rerender to update.</div>
           </div>
         </div>
