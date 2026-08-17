@@ -484,6 +484,17 @@
       margin-bottom: 10px;
     }
 
+    #family-system-sheet .solo-shot-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    #family-system-sheet .solo-shot-wrap .gallery-shot {
+      width: min(420px, 100%);
+    }
+
     #family-system-sheet .gallery-shot {
       margin: 0;
       background: #fff;
@@ -548,6 +559,20 @@
     #family-system-sheet .footer-collage > * {
       position: relative;
       z-index: 1;
+    }
+
+    #family-system-sheet .footer-pin-photo {
+      position: absolute;
+      right: 28px;
+      top: -30px;
+      width: min(260px, 32%);
+      z-index: 2;
+      transform: rotate(5deg);
+    }
+
+    #family-system-sheet .footer-pin-photo img {
+      height: 180px;
+      object-position: center 28%;
     }
 
     #family-system-sheet .flash-row {
@@ -883,6 +908,23 @@
         grid-template-columns: 1fr;
       }
 
+      #family-system-sheet .solo-shot-wrap {
+        justify-content: stretch;
+      }
+
+      #family-system-sheet .solo-shot-wrap .gallery-shot,
+      #family-system-sheet .footer-pin-photo {
+        width: 100%;
+      }
+
+      #family-system-sheet .footer-pin-photo {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-bottom: 22px;
+        transform: rotate(-2deg);
+      }
+
       #family-system-sheet .check-grid {
         grid-template-columns: 1fr;
       }
@@ -961,7 +1003,7 @@
         </div>
         <div style="position:relative;">
                 <figure class="hero-photo photo-card">
-        <img src="assets/family-photo-hero.png" alt="Family photo of Dicky, Jessica, Kit and Obie outdoors in the sunshine" />
+        <img src="assets/20250817_200054.jpg" alt="Family sitting by the water with boats behind them" />
         
       </figure>
           <div class="hero-sticker">
@@ -1108,18 +1150,10 @@
           </div>
         </div>
 
-        <div class="photo-riff">
-          <figure class="gallery-shot">
-            <img src="assets/20250817_200054.jpg" alt="Family sitting by the water with boats behind them" />
-            <figcaption>Harbour energy</figcaption>
-          </figure>
+        <div class="solo-shot-wrap">
           <figure class="gallery-shot">
             <img src="assets/20250818_110547.jpg" alt="Family with backpacks in a street scene" />
             <figcaption>On the move</figcaption>
-          </figure>
-          <figure class="gallery-shot">
-            <img src="assets/20250818_125758.jpg" alt="Family walking through an underground passage" />
-            <figcaption>Mission mode</figcaption>
           </figure>
         </div>
       </section>
@@ -1320,6 +1354,10 @@
         </div>
 
         <div class="footer-collage">
+          <figure class="gallery-shot footer-pin-photo">
+            <img src="assets/20250818_125758.jpg" alt="Family walking through an underground passage" />
+            <figcaption>Mission mode</figcaption>
+          </figure>
           <div class="flash-row">
             <div class="flash-card">
               <h4>Shared plan</h4>

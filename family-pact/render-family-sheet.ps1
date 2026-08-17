@@ -79,6 +79,20 @@ function Get-GalleryMarkup {
     }) -join "`n")
 }
 
+function Get-GalleryShotMarkup {
+    param(
+        [object]$Image,
+        [string]$CssClass = "gallery-shot"
+    )
+
+    return @"
+          <figure class="$CssClass">
+            <img src="$($Image.path)" alt="$($Image.alt)" />
+            <figcaption>$($Image.caption)</figcaption>
+          </figure>
+"@
+}
+
 $ticker = Join-Spans $data.ticker
 $navItems = Get-NavMarkup $data.masthead.nav
 $callouts = Join-Spans $data.callouts
@@ -95,6 +109,8 @@ $ageLevelItems = New-ListItems $data.phone.ageLevels
 $curfewLevelItems = New-ListItems $data.phone.curfewLevels
 $oldPhoneItems = New-ListItems $data.phone.currentOld
 $galleryMarkup = Get-GalleryMarkup $data.images.gallery
+$galleryShotOne = Get-GalleryShotMarkup $data.images.gallery[1]
+$galleryShotTwo = Get-GalleryShotMarkup $data.images.gallery[2] "gallery-shot footer-pin-photo"
 function Get-CalloutRiffMarkup {
     param([object[]]$Items)
 
@@ -606,6 +622,17 @@ $html = @"
       margin-bottom: 10px;
     }
 
+    #family-system-sheet .solo-shot-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    #family-system-sheet .solo-shot-wrap .gallery-shot {
+      width: min(420px, 100%);
+    }
+
     #family-system-sheet .gallery-shot {
       margin: 0;
       background: #fff;
@@ -670,6 +697,20 @@ $html = @"
     #family-system-sheet .footer-collage > * {
       position: relative;
       z-index: 1;
+    }
+
+    #family-system-sheet .footer-pin-photo {
+      position: absolute;
+      right: 28px;
+      top: -30px;
+      width: min(260px, 32%);
+      z-index: 2;
+      transform: rotate(5deg);
+    }
+
+    #family-system-sheet .footer-pin-photo img {
+      height: 180px;
+      object-position: center 28%;
     }
 
     #family-system-sheet .flash-row {
@@ -1005,6 +1046,23 @@ $html = @"
         grid-template-columns: 1fr;
       }
 
+      #family-system-sheet .solo-shot-wrap {
+        justify-content: stretch;
+      }
+
+      #family-system-sheet .solo-shot-wrap .gallery-shot,
+      #family-system-sheet .footer-pin-photo {
+        width: 100%;
+      }
+
+      #family-system-sheet .footer-pin-photo {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-bottom: 22px;
+        transform: rotate(-2deg);
+      }
+
       #family-system-sheet .check-grid {
         grid-template-columns: 1fr;
       }
@@ -1196,8 +1254,8 @@ $parentsCoverItems
           </div>
         </div>
 
-        <div class="photo-riff">
-$galleryMarkup
+        <div class="solo-shot-wrap">
+$galleryShotOne
         </div>
       </section>
 
@@ -1340,6 +1398,7 @@ $riffD
         </div>
 
         <div class="footer-collage">
+$galleryShotTwo
           <div class="flash-row">
             <div class="flash-card">
               <h4>Shared plan</h4>
