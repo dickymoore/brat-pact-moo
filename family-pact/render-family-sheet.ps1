@@ -19,6 +19,26 @@ function Join-Spans {
     }) -join "`n")
 }
 
+function Get-NavMarkup {
+    param([object[]]$Items)
+
+    $sectionMap = @{
+        "Money" = "#money"
+        "Phone" = "#phone"
+        "Responsibilities" = "#responsibilities"
+        "Rota" = "#rota"
+    }
+
+    return (($Items | ForEach-Object {
+        $href = $sectionMap[$_]
+        if ([string]::IsNullOrWhiteSpace($href)) {
+            "      <span>$_</span>"
+        } else {
+            "      <a href=""$href"">$_</a>"
+        }
+    }) -join "`n")
+}
+
 function Get-ImageMarkup {
     param(
         [string]$Path,
@@ -60,7 +80,7 @@ function Get-GalleryMarkup {
 }
 
 $ticker = Join-Spans $data.ticker
-$navItems = Join-Spans $data.masthead.nav
+$navItems = Get-NavMarkup $data.masthead.nav
 $callouts = Join-Spans $data.callouts
 $allowanceItems = New-ListItems $data.allowance.covers
 $parentsCoverItems = New-ListItems $data.allowance.parentsCover
@@ -116,6 +136,7 @@ $html = @"
       background: var(--paper);
       font-family: "Bricolage Grotesque", sans-serif;
       line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
     #family-system-sheet .sheet {
@@ -205,7 +226,23 @@ $html = @"
       color: var(--muted);
     }
 
-    #family-system-sheet .nav span:last-child {
+    #family-system-sheet .nav a,
+    #family-system-sheet .nav span {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #family-system-sheet .nav a:hover,
+    #family-system-sheet .nav a:focus-visible {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--acid);
+      text-decoration-thickness: 4px;
+      text-underline-offset: 8px;
+      outline: none;
+    }
+
+    #family-system-sheet .nav a:last-child {
       color: var(--ink);
       text-decoration: underline;
       text-decoration-color: var(--acid);
@@ -1047,7 +1084,7 @@ $callouts
         </div>
       </section>
 
-      <section class="section dark-band">
+      <section id="money" class="section dark-band">
         <h2 class="section-label">The Formula</h2>
         <div class="formula-grid">
           <div class="formula-card">
@@ -1073,7 +1110,7 @@ $callouts
         </div>
       </section>
 
-      <section class="section">
+      <section id="phone" class="section">
         <div class="editorial-grid">
           <div class="light-card">
             <h3 class="serif-title">Phone Boundaries</h3>
@@ -1113,7 +1150,7 @@ $callouts
 
       </section>
 
-      <section class="section lime-section">
+      <section id="responsibilities" class="section lime-section">
         <div class="baseline-grid">
           <div class="light-card" style="transform:rotate(-1deg);">
             <h3>Daily baseline</h3>
@@ -1172,7 +1209,7 @@ $galleryMarkup
         </div>
       </section>
 
-      <section class="section footer-band">
+      <section id="rota" class="section footer-band">
         <div class="weekly-grid">
           <div class="weekly-card">
             <div class="active-badge">$($data.rota.activeWeek)</div>
