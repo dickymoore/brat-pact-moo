@@ -242,14 +242,6 @@ $html = @"
       outline: none;
     }
 
-    #family-system-sheet .nav a:last-child {
-      color: var(--ink);
-      text-decoration: underline;
-      text-decoration-color: var(--acid);
-      text-decoration-thickness: 4px;
-      text-underline-offset: 8px;
-    }
-
     #family-system-sheet .layout {
       display: grid;
     }
